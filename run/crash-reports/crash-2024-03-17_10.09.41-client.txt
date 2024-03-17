@@ -1,0 +1,168 @@
+---- Minecraft Crash Report ----
+// Hey, that tickles! Hehehe!
+
+Time: 2024/3/17 上午10:09
+Description: Unexpected error
+
+java.lang.NullPointerException: Unexpected error
+	at java.util.Objects.requireNonNull(Objects.java:208) ~[?:?] {}
+	at cn.ksmcbrigade.cp.HUD.getPing(HUD.java:30) ~[%2381!/:?] {re:classloading}
+	at cn.ksmcbrigade.cp.HUD.eventHandler(HUD.java:19) ~[%2381!/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_6_HUD_eventHandler_Pre.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.client.gui.ForgeIngameGui.pre(ForgeIngameGui.java:862) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2376%2382!/:?] {re:classloading}
+	at net.minecraftforge.client.gui.ForgeIngameGui.render(ForgeIngameGui.java:337) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2376%2382!/:?] {re:classloading}
+	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:866) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.runTick(Minecraft.java:1041) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:661) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:205) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:38) ~[fmlloader-1.18.1-39.1.0.jar%230!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Render thread
+Stacktrace:
+	at java.util.Objects.requireNonNull(Objects.java:208) ~[?:?] {}
+	at cn.ksmcbrigade.cp.HUD.getPing(HUD.java:30) ~[%2381!/:?] {re:classloading}
+	at cn.ksmcbrigade.cp.HUD.eventHandler(HUD.java:19) ~[%2381!/:?] {re:classloading}
+	at net.minecraftforge.eventbus.ASMEventHandler_6_HUD_eventHandler_Pre.invoke(.dynamic) ~[?:?] {}
+	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:85) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:302) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:283) ~[eventbus-5.0.7.jar%239!/:?] {}
+	at net.minecraftforge.client.gui.ForgeIngameGui.pre(ForgeIngameGui.java:862) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2376%2382!/:?] {re:classloading}
+	at net.minecraftforge.client.gui.ForgeIngameGui.render(ForgeIngameGui.java:337) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2376%2382!/:?] {re:classloading}
+-- Affected level --
+Details:
+	All players: 1 total; [LocalPlayer['KSmc_brigade'/1636, l='ClientLevel', x=8.50, y=65.00, z=8.50]]
+	Chunk stats: 18225, 0
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (518,4,7), Section: (at 6,4,7 in 32,0,0; chunk contains blocks 512,0,0 to 527,255,15), Region: (1,0; contains chunks 32,0 to 63,31, blocks 512,0,0 to 1023,255,511)
+	Level time: 1 game time, 1 day time
+	Server brand: PaperSpigot (Velocity)
+	Server type: Non-integrated multiplayer server
+Stacktrace:
+	at net.minecraft.client.multiplayer.ClientLevel.fillReportDetails(ClientLevel.java:407) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.fillReport(Minecraft.java:2249) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.Minecraft.run(Minecraft.java:683) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B,pl:runtimedistcleaner:A}
+	at net.minecraft.client.main.Main.main(Main.java:205) ~[forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?] {}
+	at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[?:?] {}
+	at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?] {}
+	at java.lang.reflect.Method.invoke(Method.java:568) ~[?:?] {}
+	at net.minecraftforge.fml.loading.targets.ForgeClientUserdevLaunchHandler.lambda$launchService$0(ForgeClientUserdevLaunchHandler.java:38) ~[fmlloader-1.18.1-39.1.0.jar%230!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:37) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.run(Launcher.java:106) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.Launcher.main(Launcher.java:77) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?] {}
+	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?] {}
+
+
+-- Last reload --
+Details:
+	Reload number: 1
+	Reload reason: initial
+	Finished: Yes
+	Packs: Default, Mod Resources
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.1
+	Minecraft Version ID: 1.18.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.2, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode, sharing), Oracle Corporation
+	Memory: 531665936 bytes (507 MiB) / 3032481792 bytes (2892 MiB) up to 4261412864 bytes (4064 MiB)
+	CPUs: 8
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 9
+	Microarchitecture: Kaby Lake
+	Frequency (GHz): 3.60
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 8
+	Graphics card #0 name: OrayIddDriver Device
+	Graphics card #0 vendor: Shanghai Best Oray Information Technology Co., Ltd.
+	Graphics card #0 VRAM (MB): 0.00
+	Graphics card #0 deviceId: unknown
+	Graphics card #0 versionInfo: DriverVersion=17.1.58.818
+	Graphics card #1 name: NVIDIA GeForce GT 640
+	Graphics card #1 vendor: NVIDIA (0x10de)
+	Graphics card #1 VRAM (MB): 1024.00
+	Graphics card #1 deviceId: 0x0fc1
+	Graphics card #1 versionInfo: DriverVersion=30.0.14.7141
+	Graphics card #2 name: Intel(R) HD Graphics 630
+	Graphics card #2 vendor: Intel Corporation (0x8086)
+	Graphics card #2 VRAM (MB): 1024.00
+	Graphics card #2 deviceId: 0x5912
+	Graphics card #2 versionInfo: DriverVersion=31.0.101.2121
+	Memory slot #0 capacity (MB): 4096.00
+	Memory slot #0 clockSpeed (GHz): 2.40
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 4096.00
+	Memory slot #1 clockSpeed (GHz): 2.40
+	Memory slot #1 type: DDR4
+	Memory slot #2 capacity (MB): 8192.00
+	Memory slot #2 clockSpeed (GHz): 2.40
+	Memory slot #2 type: DDR4
+	Virtual memory max (MB): 21627.55
+	Virtual memory used (MB): 17654.04
+	Swap memory total (MB): 5376.00
+	Swap memory used (MB): 167.19
+	JVM Flags: 1 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Launched Version: MOD_DEV
+	Backend library: LWJGL version 3.2.2 SNAPSHOT
+	Backend API: Intel(R) HD Graphics 630 GL version 3.2.0 - Build 31.0.101.2121, Intel
+	Window size: 1920x1017
+	GL Caps: Using framebuffer using OpenGL 3.2
+	GL debug messages: 
+	Using VBOs: Yes
+	Is Modded: Definitely; Client brand changed to 'forge'
+	Type: Client (map_client.txt)
+	Graphics mode: fancy
+	Resource Packs: 
+	Current Language: English (US)
+	CPU: 8x Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz
+	ModLauncher: 9.1.0+9.1.0+main.6690ee51
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.18.1-39.1.0_mapped_official_1.18.1-recomp.|Minecraft                     |minecraft                     |1.18.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |39.1.0              |DONE      |Manifest: NOSIGNATURE
+		main                                              |CustomPing                    |cp                            |1.0                 |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 00cfb2fa-61ca-420c-8168-51d142f235ef
+	FML: 39.1
+	Forge: net.minecraftforge:39.1.0
